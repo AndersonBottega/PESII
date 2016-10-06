@@ -1,0 +1,37 @@
+<%= form_for(@tvshow) do |f| %>
+  <% if @tvshow.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tvshow.errors.count, "error") %> prohibited this tvshow from being saved:</h2>
+
+      <ul>
+      <% @tvshow.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :ano %><br>
+    <%= f.text_field :ano %>
+  </div>
+  <div class="field">
+    <%= f.label :season %><br>
+    <%= f.text_field :season %>
+  </div>
+  <div class="field">
+    <%= f.label :episodio %><br>
+    <%= f.text_field :episodio %>
+  </div>
+  <div class="field">
+    <%= f.label :nota %><br>
+    <%= f.text_field :nota %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
